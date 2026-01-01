@@ -58,36 +58,41 @@ npm run dev
 
 ### 🌐 Desktop Pages
 
-<div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:16px;">
-    <span> <img src="./public/home-page.png" alt="Home Page" /> Home Page </span>
-    <span> <img src="./public/trending-page.png" alt="Trending Page" /> Trending Page </span>
-    <span> <img src="./public/community-page.png" alt="Community Page" /> Community Page </span>
-    <span> <img src="./public/profile-page.png" alt="Profile Page" /> Profile Page </span>
-    <span> <img src="./public/search-page.png" alt="Search Page" /> Search Page </span>
-    <span> <img src="./public/post-page.png" alt="Post Page" /> Post Page </span>
-</div>
+| Home Page | Trending Page |
+|----------|---------------|
+| <img src="./public/home-page.png" alt="Home Page" width="400" /> | <img src="./public/trending-page.png" alt="Trending Page" width="400" /> |
+
+| Community Page | Profile Page |
+|---------------|--------------|
+| <img src="./public/community-page.png" alt="Community Page" width="400" /> | <img src="./public/profile-page.png" alt="Profile Page" width="400" /> |
+
+| Search Page | Post Page |
+|------------|-----------|
+| <img src="./public/search-page.png" alt="Search Page" width="400" /> | <img src="./public/post-page.png" alt="Post Page" width="400" /> |
 
 ---
 
-### 🔐 Auth Pages
-<div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:16px;"> 
-    <span> <img src="./public/login-form.png" alt="Login Form" /> Login Form </span>
-    <span> <img src="./public/signup-form.png" alt="Signup Form" /> Signup Form </span>
-    <span> <img src="./public/post-form.png" alt="Post Form" /> Post Form </span>
-    <span> <img src="./public/community-form.png" alt="Community Form" /> Community Form </span>
-</div>
+### 🔐 Form Pages
+
+| Login Form | Signup Form |
+|-----------|-------------|
+| <img src="./public/login-form.png" alt="Login Form" width="400" /> | <img src="./public/signup-form.png" alt="Signup Form" width="400" /> |
+
+| Post Form | Community Form |
+|----------|----------------|
+| <img src="./public/post-form.png" alt="Post Form" width="400" /> | <img src="./public/community-form.png" alt="Community Form" width="400" /> |
 
 ---
 
 ### 📱 Mobile Pages (Desktop View: 3 per row)
-<div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;"> 
-    <span> <img src="./public/mobile-feed-page.png" alt="Mobile Feed Page" /> Mobile Feed Page </span>
-    <span> <img src="./public/mobile-explore-page.png" alt="Mobile Explore Page" /> Mobile Explore Page </span>
-    <span> <img src="./public/mobile-create-post.png" alt="Mobile Create Post" /> Mobile Create Post </span>
-    <span> <img src="./public/mobile-community-page.png" alt="Mobile Community Page" /> Mobile Community Page </span>
-    <span> <img src="./public/mobile-profile-page.png" alt="Mobile Profile Page" /> Mobile Profile Page </span>
-    <span> <img src="./public/mobile-post-page.png" alt="Mobile Post Page" /> Mobile Post Page </span>
-</div>
+
+| Mobile Feed Page | Mobile Explore Page | Mobile Create Post |
+|------------------|--------------------|--------------------|
+| <img src="./public/mobile-feed-page.png" alt="Mobile Feed Page" width="250" /> | <img src="./public/mobile-explore-page.png" alt="Mobile Explore Page" width="250" /> | <img src="./public/mobile-create-post.png" alt="Mobile Create Post" width="250" /> |
+
+| Mobile Community Page | Mobile Profile Page | Mobile Post Page |
+|----------------------|--------------------|------------------|
+| <img src="./public/mobile-community-page.png" alt="Mobile Community Page" width="250" /> | <img src="./public/mobile-profile-page.png" alt="Mobile Profile Page" width="250" /> | <img src="./public/mobile-post-page.png" alt="Mobile Post Page" width="250" /> |
 
 ---
 
