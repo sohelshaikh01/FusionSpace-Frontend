@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  :root {
+    /* Backgrounds */
+    --bg-main: #F2F2F2;
+    --bg-panel: #E6E6E6;
+    --bg-deep: #D1D1D1;
+
+    /* Text */
+    --text-strong: #121212;
+    --text-normal: #3A3A3A;
+    --text-soft: #6E6E6E;
+
+    /* Accent System */
+    --accent-primary: #FF6A1A;
+    --accent-danger: #E63946;
+    --accent-focus: #3A8DFF;
+
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.32);
+
+    /* Shadow & Depth */
+    --shadow-soft: 0 8px 22px rgba(0, 0, 0, 0.10);
+    --shadow-pressed: inset 0 2px 3px rgba(0, 0, 0, 0.22);
+
+    /* Layout Tokens */
+    --radius: 12px;
+    --gap: 20px;
+    --nav-h: 64px;
+    --panel-pad: 18px;
+  }
+
+  /* Dark Mode - Triggered by .dark class on <html> or <body> */
+  .dark {
+    --bg-main: #111111;
+    --bg-panel: #1A1A1A;
+    --bg-deep: #2A2A2A;
+
+    --text-strong: #F5F5F5;
+    --text-normal: #D5D5D5;
+    --text-soft: #999999;
+
+    --glass-bg: rgba(0, 0, 0, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1); 
+    
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Apply base variables to body */
+  body {
+    @apply bg-[var(--bg-main)] text-[var(--text-normal)] transition-colors duration-300;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3 {
+    /* This ensures all headings use the "strong" color by default */
+    color: var(--text-strong);
+  }
+}
+
+@layer components {
+  /* Helper class for card backgrounds */
+  .panel-card {
+    @apply bg-[var(--bg-panel)] rounded-[var(--radius)] shadow-[var(--shadow-soft)] border border-black/5 dark:border-white/10;
+  }
+}
