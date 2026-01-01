@@ -2,6 +2,8 @@
 
 This is Collborative and Sharing Posts Application. This allow users to share posts in public and communities. User can create own communties. User can follow others and joins different communities.
 
+Live Link: [fusionspace.netlify.app](https://fusionspace.netlify.app)
+
 ## 🔥 Tech Stack
 
 **Frontend**
