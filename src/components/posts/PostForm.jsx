@@ -104,7 +104,6 @@ const PostForm = ({ post }) => {
                                      bg-[var(--bg-panel)] dark:bg-[#1f1f1f] text-[var(--text-strong)]
                                      border-[var(--bg-deep)] dark:border-white/10 shadow-sm
                                      focus:border-[var(--accent-focus)] focus:ring-4 focus:ring-[var(--accent-focus)]/10"
-                            required
                         >
                             <option value="">Choose a community</option>
                             {myCommunities.map((comm) => (
