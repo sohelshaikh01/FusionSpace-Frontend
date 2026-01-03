@@ -39,7 +39,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (userProfile && !isInitialized) {
-      setIsFollowing(!!userProfile.isFollowing);
+      setIsFollowing(userProfile.isFollowing);
       setIsInitialized(true);
     }
   }, [userProfile, isInitialized]);
@@ -57,13 +57,10 @@ const ProfilePage = () => {
     if (!isAuthenticated) return navigate("/login");
 
     const prev = isFollowing;
-    const next = !prev;
+    setIsFollowing(!isFollowing);
 
-    setIsFollowing(next);
-
-    const result = prev
-      ? await unfollowUser(targetId)
-      : await followUser(targetId);
+    const result = prev ? await unfollowUser(targetId) : await followUser(targetId);
+    // Change State
 
     if (!result.success) {
       setIsFollowing(prev);
@@ -82,7 +79,7 @@ const ProfilePage = () => {
     <div className="w-full bg-[var(--bg-main)] min-h-[calc(100vh-var(--nav-h))] px-4 transition-colors duration-300">
       
       {/* Profile Header Card */}
-      <div className="bg-[var(--bg-panel)] p-6 sm:p-8 rounded-[var(--radius)] shadow-[var(--shadow-soft)] border border-black/5 dark:border-white/10 mb-8 transition-colors">
+      <div className="bg-[var(--bg-panel)] p-6 sm:p-8 rounded-[var(--radius)] shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)]  border border-black/5 dark:border-white/10 mb-8 transition-colors">
         <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-6">
           <img
             src={userProfile.user.avatar}
@@ -171,7 +168,7 @@ const ProfilePage = () => {
                 <div 
                   key={post._id}
                   onClick={() => navigate(`/posts/${post._id}`)}
-                  className="group cursor-pointer flex flex-col bg-[var(--bg-panel)] h-[360px] overflow-hidden rounded-[var(--radius)] shadow-[var(--shadow-soft)] border border-black/5 dark:border-white/5 active:scale-[0.98] transition-all"
+                  className="group cursor-pointer flex flex-col bg-[var(--bg-panel)] h-[360px] overflow-hidden rounded-[var(--radius)] shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)]  border border-black/5 dark:border-white/5 active:scale-[0.98] transition-all"
                 >
                   <div className="p-4 flex gap-3 items-center">
                     <img src={post.owner.avatar} className="w-8 h-8 rounded-full border border-[var(--bg-deep)] object-cover" alt="avatar" />

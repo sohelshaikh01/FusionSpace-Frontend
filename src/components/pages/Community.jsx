@@ -41,7 +41,7 @@ export const Community = () => {
             </div>
 
             {!myCommunities?.length ? (
-              <div className="py-24 flex flex-col items-center justify-center bg-[var(--bg-panel)] rounded-[var(--radius)] border border-dashed border-[var(--bg-deep)] dark:border-white/10 shadow-inner text-center">
+              <div className="py-24 flex flex-col items-center justify-center bg-[var(--bg-panel)] rounded-[var(--radius)] border border-dashed shadow-[0_8px_22px_rgba(0,0,0,0.10)] dark:shadow-[0_8px_22px_rgba(0,0,0,0.50)] border-[var(--bg-deep)] dark:border-white/10 text-center">
                 <div className="text-5xl mb-4 grayscale opacity-40">👥</div>
                 <p className="text-[var(--text-soft)] font-black text-lg md:text-xl tracking-tight">
                   No Communities joined yet.
@@ -56,7 +56,7 @@ export const Community = () => {
                   <Link 
                     key={community._id} 
                     to={`/communities/${community._id}`} 
-                    className="group p-5 rounded-[var(--radius)] bg-[var(--bg-panel)] shadow-[var(--shadow-soft)] border border-black/5 dark:border-white/5 hover:border-[var(--accent-primary)] transition-all active:scale-[0.98]"
+                    className="group p-5 rounded-[var(--radius)] bg-[var(--bg-panel)] shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)] border border-black/5 dark:border-white/5 hover:border-[var(--accent-primary)] transition-all active:scale-[0.98]"
                   >
                     <div className="flex gap-4 items-center">
                       <img 

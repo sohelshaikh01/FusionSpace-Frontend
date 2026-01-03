@@ -16,9 +16,7 @@ const LeftSidebar = () => {
 
   return (
     <aside 
-      className="sidebar md:flex hidden w-[240px] flex-col gap-2 min-h-[400px] 
-                 bg-[var(--bg-panel)] rounded-[var(--radius)] p-[var(--panel-pad)] 
-                 shadow-[var(--shadow-soft)] border border-black/5 dark:border-white/10" 
+      className="sidebar md:flex hidden w-[240px] flex-col gap-2 min-h-[400px] bg-[var(--bg-panel)] rounded-[var(--radius)] p-[var(--panel-pad)] shadow-[0_8px_22px_rgba(0,0,0,0.10)] dark:shadow-[0_8px_22px_rgba(0,0,0,0.50)] border border-black/5 dark:border-white/10" 
       aria-label="Sidebar"
     >
       {navItems.map((item) => (

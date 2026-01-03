@@ -6,7 +6,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'soft': '0 8px 22px rgba(0, 0, 0, 0.10)',
+        'soft-dark': '0 8px 22px rgba(0, 0, 0, 0.50)',
+      }
+    }
   },
   plugins: [],
 }

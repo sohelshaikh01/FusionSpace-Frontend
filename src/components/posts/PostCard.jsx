@@ -7,7 +7,7 @@ const PostCard = ({ post }) => {
   return (
     <div 
       onClick={() => navigate(`/posts/${post._id}`)}
-      className="group cursor-pointer bg-[var(--bg-panel)] h-[275px]  sm:h-[360px] lg:h-[360px] flex flex-col overflow-hidden rounded-[var(--radius)] shadow-[var(--shadow-soft)] border border-black/5 dark:border-white/10 transition-all duration-200 active:scale-[0.98]"
+      className="group cursor-pointer bg-[var(--bg-panel)] h-[275px]  sm:h-[360px] lg:h-[360px] flex flex-col overflow-hidden rounded-[var(--radius)] shadow-[0_8px_22px_rgba(0,0,0,0.10)] dark:shadow-[0_8px_22px_rgba(0,0,0,0.50)] border border-black/5 dark:border-white/10 transition-all duration-200 active:scale-[0.98]"
     >
       {/* Header Section */}
       <div className="flex gap-3 items-center p-4">

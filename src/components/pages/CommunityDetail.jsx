@@ -153,8 +153,14 @@ const CommunityDetail = () => {
             Recent Activity
             <div className="h-[2px] flex-1 bg-[var(--text-strong)] opacity-10" />
           </h3>
-
-          {communityPosts.length === 0 ? (
+          
+          { !isMember &&
+            <div className="py-24 flex flex-col items-center justify-center bg-[var(--bg-panel)] rounded-[var(--radius)] border-2 border-dashed border-[var(--bg-deep)] text-center opacity-70">
+              <div className="text-5xl mb-4 grayscale">📻</div>
+              <p className="text-[var(--text-soft)] font-black uppercase text-xs tracking-widest">Be a member to see Posts</p>
+            </div>}
+          
+          {isMember && (communityPosts.length === 0 ? (
             <div className="py-24 flex flex-col items-center justify-center bg-[var(--bg-panel)] rounded-[var(--radius)] border-2 border-dashed border-[var(--bg-deep)] text-center opacity-70">
               <div className="text-5xl mb-4 grayscale">📻</div>
               <p className="text-[var(--text-soft)] font-black uppercase text-xs tracking-widest">Signal is quiet... be the first to post!</p>
@@ -187,7 +193,8 @@ const CommunityDetail = () => {
                 </div>
               ))}
             </div>
-          )}
+          ))}
+
         </section>
       </div>
     </div>

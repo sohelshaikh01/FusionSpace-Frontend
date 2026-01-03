@@ -16,6 +16,7 @@ const PostDetailPage = () => {
 
   const [liked, setLiked] = useState(false);
   const [count, setCount] = useState(0);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   useEffect(() => {
     getPostById(postId);
@@ -38,36 +39,51 @@ const PostDetailPage = () => {
     const result = await togglePostLike(currentPost._id);
 
     if (!result.success) setLiked(prevLiked);
-
-    // const prevLiked = liked;
-    // const prevCount = count;
-
-    // setLiked(!prevLiked);
-    // setCount(prevLiked ? prevCount - 1 : prevCount + 1);
-
-    // const result = await togglePostLike(currentPost._id);
-
-    // if (!result.success) {
-    //   setLiked(prevLiked);
-    //   setCount(prevCount);
-    // }
+    
   };
 
-  const handleDelete = (postId) => {
-    deleteAPost(postId);
-    navigate("/");
+  const handleShare = () => {
+    const url = window.location.href;
+
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        alert("URL copied to clipboard!"); // Replace with a toast notification if preferred
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
   };
 
-  // Logic remains the same, styling updated to use variables
+  const confirmDelete = async () => {
+    const result = await deleteAPost(currentPost._id);
+    setShowDeleteModal(false);
+    if(result.success) navigate(`/profile/${isUser?._id}`);
+  }
+
   const isAuthor = currentPost ? currentPost.owner?._id === isUser?._id : false;
 
   if (isLoading || !currentPost) return <Loader label="Loading Post..." />;
 
   return (
     <div className="w-full bg-[var(--bg-main)] min-h-[calc(100vh-var(--nav-h))] flex flex-col md:flex-row gap-8 sm:px-4 transition-colors duration-300">
+
+      {showDeleteModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-[var(--bg-panel)] w-full max-w-sm p-8 rounded-[var(--radius)] shadow-[var(--shadow-soft)] border border-black/10 dark:border-white/10 animate-in zoom-in duration-200">
+            <h2 className="text-xl font-black text-[var(--text-strong)] uppercase tracking-tight">Delete Post?</h2>
+            <p className="text-[var(--text-soft)] mt-2 text-sm">
+              This action is permanent for <span className="text-[var(--text-strong)] font-black">this Post</span>.
+            </p>
+            <div className="flex gap-3 mt-8">
+              <Button btnG className="flex-1 uppercase text-xs tracking-widest" onClick={() => setShowDeleteModal(false)}>Cancel</Button>
+              <Button btnD className="flex-1 uppercase text-xs tracking-widest" onClick={confirmDelete}>Delete</Button>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* LEFT: Post Content */}
-      <article className="bg-[var(--bg-panel)] p-6 rounded-[var(--radius)] shadow-[var(--shadow-soft)] border border-black/5 dark:border-white/10 w-full h-fit transition-colors">
+      <article className="bg-[var(--bg-panel)] p-6 rounded-[var(--radius)] shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)]  border border-black/5 dark:border-white/10 w-full h-fit transition-colors">
 
         <header className="flex justify-between items-center mb-6">
           <div className="flex gap-3 items-center">
@@ -90,7 +106,7 @@ const PostDetailPage = () => {
             {isAuthor ? (
               <>
                 <Button btnG className="text-xs uppercase" onClick={() => navigate(`/posts/${postId}/edit`)}>Edit</Button>
-                <Button btnG className="text-xs uppercase text-[var(--accent-danger)] border-[var(--accent-danger)]/20" onClick={() => handleDelete(postId)}>Delete</Button>
+                <Button btnG className="text-xs uppercase text-[var(--accent-danger)] border-[var(--accent-danger)]/20" onClick={() => setShowDeleteModal(true)}>Delete</Button>
               </>
             ) : (
               <Button btnG className="text-xs uppercase">Follow</Button>
@@ -122,7 +138,12 @@ const PostDetailPage = () => {
             <span className="hidden sm:inline">
               Likes</span>
           </Button>
-          <Button btnG className="text-xs uppercase tracking-widest">🔗 Share</Button>
+
+          {/* Works in production */}
+          <Button btnG className="text-xs uppercase tracking-widest" onClick={handleShare}
+          >
+            🔗 Share
+          </Button>
         </footer>
       </article>
 
@@ -133,7 +154,7 @@ const PostDetailPage = () => {
           <div className="h-[2px] flex-1 bg-[var(--text-strong)] opacity-10" />
         </h3>
         
-        <div className="bg-[var(--bg-panel)] p-5 rounded-[var(--radius)] mb-8 shadow-[var(--shadow-soft)] border border-black/5 dark:border-white/10">
+        <div className="bg-[var(--bg-panel)] p-5 rounded-[var(--radius)] mb-8 shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)]  border border-black/5 dark:border-white/10">
           <CreateComment postId={postId} />
         </div>
 

@@ -63,7 +63,7 @@ const CommentCard = ({ comment }) => {
             <CommentForm comment={comment} setUpdating={setUpdating} />
             <button 
               onClick={() => setUpdating(false)} 
-              className="text-[10px] font-bold text-gray-500 dark:text-gray-400 w-fit hover:underline"
+              className="text-[10px] mt-1 ml-2 uppercase font-bold text-gray-500 dark:text-gray-400 w-fit hover:text-neutral-700 dark:hover:text-white hover:transition-colors"
             >
               Cancel Edit
             </button>

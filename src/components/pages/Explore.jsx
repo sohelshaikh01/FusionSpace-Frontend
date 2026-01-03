@@ -45,7 +45,7 @@ const ExplorePage = () => {
             <input
               type="text"
               placeholder="Search users or communities..."
-              className="flex-1 bg-[var(--bg-panel)] border border-white/10 p-3 rounded-[var(--radius)] text-[var(--text-strong)] outline-none focus:border-[var(--accent-primary)]"
+              className="flex-1 bg-[var(--bg-panel)] border border-white/10 p-3 rounded-[var(--radius)] text-[var(--text-strong)] shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)] outline-none focus:border-[var(--accent-primary)]"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -83,7 +83,7 @@ const ExplorePage = () => {
                   <h3 className="text-[var(--accent-focus)] text-xs font-black mb-4 uppercase tracking-widest">People</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {results.users?.map(user => (
-                      <Link to={`/profile/${user._id}`} key={user._id} className="bg-[var(--bg-panel)] p-4 rounded-[var(--radius)] border border-white/5 hover:border-[var(--accent-primary)] transition-all flex items-center gap-4">
+                      <Link to={`/profile/${user._id}`} key={user._id} className="bg-[var(--bg-panel)] p-4 rounded-[var(--radius)] border border-white/5 hover:border-[var(--accent-primary)] transition-all shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)] flex items-center gap-4">
                         <img src={user.avatar} className="w-10 h-10 bg-[var(--bg-deep)] rounded-full flex items-center justify-center font-bold text-[var(--accent-primary)]" />
                         <span className="font-bold text-[var(--text-strong)]">{user.username}</span>
                       </Link>
@@ -97,7 +97,7 @@ const ExplorePage = () => {
                   <h3 className="text-[var(--accent-focus)] text-xs font-black mb-4 uppercase tracking-widest">Communities</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {results.communities?.map(comm => (
-                      <Link to={`/communities/${comm._id}`} key={comm._id} className="bg-[var(--bg-panel)] p-4 rounded-[var(--radius)] border border-white/5 hover:border-[var(--accent-primary)] transition-all">
+                      <Link to={`/communities/${comm._id}`} key={comm._id} className="bg-[var(--bg-panel)] p-4 rounded-[var(--radius)] shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)] border border-white/5 hover:border-[var(--accent-primary)] transition-all">
                         <span className="font-bold text-[var(--text-strong)]"># {comm.communityName}</span>
                       </Link>
                     ))}
