@@ -47,9 +47,7 @@ const PostCard = ({ post }) => {
         </div>
       ) : (
         /* Empty space filler for text-only posts */
-        <div className="flex-1 w-full bg-gradient-to-br from-black/5 to-transparent dark:from-white/5" >\
-          No Image
-        </div>
+        <div className="flex-1 w-full bg-gradient-to-br from-black/5 to-transparent dark:from-white/5" />
       )}
     </div>
   );

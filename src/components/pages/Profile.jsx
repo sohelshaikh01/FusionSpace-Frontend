@@ -82,7 +82,7 @@ const ProfilePage = () => {
       <div className="bg-[var(--bg-panel)] p-6 sm:p-8 rounded-[var(--radius)] shadow-[0_7px_20px_rgba(0,0,0,0.10)] dark:shadow-[0_7px_20px_rgba(0,0,0,0.50)]  border border-black/5 dark:border-white/10 mb-8 transition-colors">
         <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-6">
           <img
-            src={userProfile.user.avatar}
+            src={userProfile.user?.avatar}
             className="w-28 md:w-32 h-28 md:h-32 rounded-full object-cover border-4 border-[var(--bg-deep)] shadow-sm"
             alt="avatar"
           />

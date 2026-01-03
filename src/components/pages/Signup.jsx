@@ -18,6 +18,7 @@ const SignupPage = () => {
     avatar: null,
   });
 
+  // Change Here
   useEffect(() => {
     if (isUser) navigate("/");
   }, [isUser, navigate]);
