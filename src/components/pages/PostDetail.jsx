@@ -109,7 +109,7 @@ const PostDetailPage = () => {
                 <Button btnG className="text-xs uppercase text-[var(--accent-danger)] border-[var(--accent-danger)]/20" onClick={() => setShowDeleteModal(true)}>Delete</Button>
               </>
             ) : (
-              <Button btnG className="text-xs uppercase">Follow</Button>
+              <Button btnG className="text-xs uppercase" onClick={() => navigate(`/profile/${currentPost.owner?._id}`)}>Follow</Button>
             )}
           </div>
         </header>
