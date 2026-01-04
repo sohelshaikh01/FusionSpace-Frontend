@@ -113,7 +113,7 @@ const CommunityDetail = () => {
           <div className="p-5 rounded-[var(--radius)] bg-[var(--bg-panel)] border border-black/5 dark:border-white/10 shadow-[var(--shadow-soft)]">
             <div className="font-black text-[var(--text-strong)] border-b border-black/5 pb-3 text-[10px] uppercase tracking-[0.2em] opacity-60">Administrator</div>
             <Link to={`/profile/${currentCommunity.ownerId?._id}`} className="flex items-center gap-3 mt-4 group">
-              <img src={currentCommunity.ownerId?.avatar} className="w-10 h-10 rounded-full border-2 border-[var(--bg-deep)] group-hover:border-[var(--accent-primary)] transition-colors" alt="admin" />
+              <img src={currentCommunity.ownerId?.avatar} className="w-10 h-10 object-cover rounded-full border-2 border-[var(--bg-deep)] group-hover:border-[var(--accent-primary)] transition-colors" alt="admin" />
               <div className="flex flex-col">
                 <strong className="text-sm text-[var(--text-strong)] font-black tracking-tight">@{currentCommunity.ownerId?.username}</strong>
                 <small className="text-[var(--accent-primary)] text-[9px] uppercase font-black tracking-tighter">Founder</small>
