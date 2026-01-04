@@ -139,9 +139,9 @@ const ProfilePage = () => {
                 </button>
                 <div className={`transition-all duration-300 ease-in-out ${openAccordion === type ? 'max-h-80 overflow-y-auto pb-4 pt-2' : 'max-h-0'}`}>
                   {list.length > 0 ? list.map(f => (
-                    <Link key={f._id} to={`/profile/${f._id}`} className="flex items-center gap-3 px-4 py-2 hover:bg-[var(--accent-primary)]/10 group transition-colors">
-                      <img src={f.avatar} className="w-8 h-8 rounded-full border border-[var(--bg-deep)]" alt="av" />
-                      <span className="text-xs font-bold text-[var(--text-strong)] group-hover:text-[var(--accent-primary)]">@{f.username}</span>
+                    <Link key={f?._id} to={`/profile/${f?._id}`} className="flex items-center gap-3 px-4 py-2 hover:bg-[var(--accent-primary)]/10 group transition-colors">
+                      <img src={f?.avatar} className="w-8 h-8 rounded-full border border-[var(--bg-deep)]" alt="av" />
+                      <span className="text-xs font-bold text-[var(--text-strong)] group-hover:text-[var(--accent-primary)]">@{f?.username}</span>
                     </Link>
                   )) : <p className="text-[10px] text-center text-[var(--text-soft)] font-black py-4 uppercase">None yet</p>}
                 </div>
