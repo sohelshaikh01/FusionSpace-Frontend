@@ -110,7 +110,6 @@ const PostDetailPage = () => {
               </>
             ) : (
               <Button btnG className="text-xs uppercase hidden" onClick={() => navigate(`/profile/${currentPost.owner?._id}`)}></Button>
->>>>>>> update-post
             )}
           </div>
         </header>
